@@ -57,7 +57,7 @@ func NewReflectionService() (*ReflectionService, error) {
 		return true
 	})
 
-	slices.SortFunc(fds.File, func(x, y *descriptorpb.FileDescriptorProto) bool {
+	slices.SortFunc(fds.File, func(x, y *descriptorpb.FileDescriptorProto) int {
 		return *x.Name < *y.Name
 	})
 
